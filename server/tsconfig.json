@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ES2020",
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "types": ["node", "jest"],
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"],
+      "@resources/*": ["resources/*"],
+      "@services/*": ["src/services/*"],
+      "@functions/*": ["src/functions/*"],
+      "@libs/*": ["src/libs/*"],
+      "@src/*": ["src/*"],
+      "@entities/*": ["src/entities/*"],
+      "@utils/*": ["src/utils/*"],
+      "@errors/*": ["src/errors/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@repositories/*": ["src/repositories/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode/**/*"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
