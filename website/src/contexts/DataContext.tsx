@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import ApiRoutesNames from '@enums/ApiRoutesEnum.tsx';
 import DataStorageTypes from '@enums/DataStorageTypes.tsx';
-import { fetchEncapsulation } from '@services/fetchEncapsulation.tsx';
+// import { fetchEncapsulation } from '@services/fetchEncapsulation.tsx';
 
 interface Data {
   type: DataStorageTypes,
@@ -13,24 +13,12 @@ interface Data {
 }
 
 const dataNodes: Data[] = [
-  {
-    type: DataStorageTypes.etablishements,
-    apiUrl: ApiRoutesNames.GET_ESTABLISHMENTS,
-    storage: true,
-    refresh: false,
-  },
-  {
-    type: DataStorageTypes.profil,
-    apiUrl: ApiRoutesNames.GET_PROFILES_ME,
-    storage: true,
-    refresh: false,
-  },
-  {
-    type: DataStorageTypes.s_etablishements,
-    apiUrl: false,
-    storage: true,
-    refresh: true,
-  },
+  // {
+  //   type: DataStorageTypes.etablishements,
+  //   apiUrl: ApiRoutesNames.GET_ESTABLISHMENTS,
+  //   storage: true,
+  //   refresh: false,
+  // },
 ];
 
 interface DataContextType {

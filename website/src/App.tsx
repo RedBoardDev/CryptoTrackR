@@ -4,10 +4,21 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import { ConfigProvider } from 'antd';
-import { DataProvider } from '@contexts/DataContext.tsx';
+// import { DataProvider } from '@contexts/DataContext.tsx';
 import NavigationName from '@enums/NavigationEnums';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18n/config.ts';
+import AppLayout from '@components/layouts/AppLayout';
+import Login from '@views/Login';
+import Dashboard from '@views/Dashboard';
+
+function SoftwareLayout() {
+  return (
+    <AppLayout>
+      <Outlet />
+    </AppLayout>
+  );
+}
 
 function App() {
   return (
@@ -19,12 +30,18 @@ function App() {
           },
         }}
       >
+        {/* <DataProvider> */}
           <Router>
             <Routes>
-              {/* AUTHENTIFICATION  */}
-              {/* <Route path={RouteName.LOGIN} element={<Login />} /> */}
+              <Route path="/" element={<SoftwareLayout />}>
+                <Route index element={<Dashboard />} />
+                {/* Ajoutez d'autres routes pour les pages avec layout ici */}
+              </Route>
+              <Route path="/login" element={<Login />} />
+              {/* Ajoutez d'autres routes pour les pages sans layout ici */}
             </Routes>
           </Router>
+        {/* </DataProvider> */}
       </ConfigProvider>
     </I18nextProvider>
   );
